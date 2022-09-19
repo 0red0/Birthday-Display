@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<style>
+   body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: 900;
+      color: white;
+      background-color: rgb(133, 23, 96);
+      text-align: center;
+   }
+
+   div {
+      border: 10px solid white;
+      animation: coloring 5s infinite alternate;
+   }
+
+   @keyframes coloring {
+      0% {
+         border-color: yellow;
+      }
+
+      10% {
+         border-color: red;
+      }
+
+      20% {
+         border-color: blue;
+      }
+
+      30% {
+         border-color: violet;
+      }
+
+      40% {
+         border-color: pink;
+      }
+
+      50% {
+         border-color: lime;
+      }
+
+      60% {
+         border-color: white;
+      }
+
+      80% {
+         border-color: rgb(102, 23, 72);
+      }
+
+      100% {
+         border-color: rgb(221, 146, 8);
+      }
+   }
+
+   h1 {
+      font-size: 3rem;
+   }
+
+   h2 {
+      font-size: 2.2rem;
+   }
+</style>
+
+<body>
+   <div>
+      <h1></h1>
+      <h2 id="months"></h2>
+      <h2 id="days"></h2>
+   </div>
+</body>
+<script>
+   let content = document.querySelector("h1");
+   let mons = document.getElementById("months")
+   let dys = document.getElementById("days")
+
+   let pointer = new Date();
+   let birthday = new Date("feb 24 1997");
+   let age = Date.now() - birthday;
+   age = Math.trunc(age / 1000 / 60 / 60 / 24 / 365);
+
+   let days = pointer.getDate();
+   console.log(days)
+   let months = pointer.getMonth() + 1;
+   console.log(months);
+
+
+   content.innerText = age + "   YEARS";
+   mons.innerText = months + "   MONTHS";
+   dys.innerText = days + "   DAYS"
+</script>
+
+</html>
