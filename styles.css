@@ -42,12 +42,12 @@ header {
    margin: 80px auto 10px;
 }
 main {
-   margin: auto;
-   display: flex;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
    justify-content: center;
-   gap: 70px;
 }
 nav {
+   margin: 20px auto;
    display: flex;
    flex-direction: column;
    justify-content: center;
